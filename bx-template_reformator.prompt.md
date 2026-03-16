@@ -12,7 +12,7 @@ name: 'bx-trf'
 `local/templates/.default/components/${namespace}/${componentName}/${templateName}/`
 
 Переформатируй все *.php файлы, игнорируя при этом языковые файлы (`lang/*.php`), в соответствии с соглашениями проекта:
-- Переименуй переменные согласно префиксам ($lst*, $dct*, $ref* и т.д.), не затрагивая входящие в шаблон переменные ($arParams, $arResult, $APPLICATION и т.д.)
+- Переименуй локально объявляемые и используемые переменные, согласно префиксам ($lst*, $dct*, $ref* и т.д.), не затрагивая входящие в шаблон переменные ($arParams, $arResult, $APPLICATION и т.д.)
 - Перенеси открывающую фигурную скобку `{` блоков `if`, `foreach`, `while` и т.п. на ту же строку что и условие: `if ($Condition) {`
 - Оформи блоки if/foreach с HTML через альтернативный синтаксис (: / end*)
 - Удали все табличные теги (`<table>`, `<tr>`, `<td>`, `<th>`, `<thead>`, `<tbody>`, `<tfoot>`) и замени их на div-структуру с CSS классами для стилизации
@@ -23,6 +23,7 @@ name: 'bx-trf'
  * @var array $arParams
  * @var array $arResult
  * @var CBitrixComponent $component
+ * @var string $templateFolder
  */
 ```
 
