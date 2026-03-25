@@ -9,6 +9,7 @@ name: 'bx-trf'
 Имя шаблона: ${input:templateName:'.default'}
 
 Корень проекта: определи из результата команды `pwd` в терминале перед началом работы.
+Используй относительные пути от корня проекта для всех операций с файлами и директориями.
 
 При записи/перезаписи файлов предпочитай shell-команды (heredoc через cat) вместо инструментов редактора VS Code, чтобы избежать несогласованности между виртуальным слоем редактора и реальной файловой системой.
 
@@ -29,7 +30,11 @@ name: 'bx-trf'
  * @var array $arParams
  * @var array $arResult
  * @var CBitrixComponent $component
+ * @var CBitrixComponentTemplate $this
+ * @var string $templateName
+ * @var string $templateFile
  * @var string $templateFolder
+ * @var string $componentPath
  */
 ```
 
